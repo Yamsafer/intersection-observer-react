@@ -2,7 +2,7 @@
 
 # React IntersectionObserver
 
-A simple wrapper around IntersectionObserver API to use it within react apps.
+A simple wrapper around [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) API to use it within react apps.
 
 
 ## Basic Usage
