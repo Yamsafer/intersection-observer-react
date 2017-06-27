@@ -1,6 +1,8 @@
 {
   "presets": [
-    "react"
+    "react",
+    "es2015",
+    "stage-0"
   ],
   "plugins": [
     [
@@ -14,17 +16,20 @@
     "dev": {
       "presets": [
         "es2015",
+        "stage-0",
         "react-hmre"
       ]
     },
     "development": {
       "presets": [
-        "es2015"
+        "es2015",
+        "stage-0"
       ]
     },
     "modules": {
       "presets": [
-        "es2015"
+        "es2015",
+        "stage-0"
       ]
     },
     "es6": {
@@ -34,12 +39,14 @@
           {
             "modules": false
           }
-        ]
+        ],
+        "stage-0"
       ]
     },
     "test": {
       "presets": [
-        "es2015"
+        "es2015",
+        "stage-0"
       ]
     },
   }

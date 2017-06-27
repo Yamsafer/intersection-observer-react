@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
+  "name": "react-intersection-observer",
   "description": "Boilerplate for React.js components",
   "author": "Juho Vepsalainen",
   "user": "survivejs",
-  "version": "5.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -98,5 +98,10 @@
   "license": "MIT",
   "pre-push": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
+    "intersection-observer": "^0.3.2",
+    "prop-types": "^15.5.10"
+  }
 }

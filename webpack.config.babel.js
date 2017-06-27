@@ -27,15 +27,15 @@ const common = {
   },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: 'eslint-loader',
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
-      },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   use: 'eslint-loader',
+      //   include: [
+      //     config.paths.docs,
+      //     config.paths.src
+      //   ]
+      // },
       {
         test: /\.md$/,
         use: ['catalog/lib/loader', 'raw-loader']

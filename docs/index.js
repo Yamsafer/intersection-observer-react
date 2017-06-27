@@ -18,6 +18,10 @@ const pages = [
     path: '/',
     title: 'Introduction',
     component: require('../README.md')
+  }, {
+    path: '/Example',
+    title: 'Infinite Scroll Example',
+    component: require('../src/demo')
   }
 ];
 
