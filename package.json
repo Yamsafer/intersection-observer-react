@@ -1,8 +1,8 @@
 {
   "name": "react-intersection-observer",
   "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
+  "author": "Faris Abusada",
+  "user": "Yamsafer",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --env dev",
