@@ -3,7 +3,7 @@
   "description": "A simple wrapper around IntersectionObserver API to use it within react apps.",
   "author": "Faris Abusada",
   "user": "Yamsafer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
