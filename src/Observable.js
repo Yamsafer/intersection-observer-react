@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { func } from 'prop-types';
+import React, { Component } from "react";
+import { func } from "prop-types";
 
 const contextTypes = {
   subscribe: func,
@@ -9,21 +9,40 @@ const contextTypes = {
 class Observable extends Component {
   constructor(props) {
     super(props);
+    this.state = { isVisible: false };
     this.onRef = this.onRef.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
   }
   onRef(ref) {
     this.ref = ref;
   }
+  onEnter() {
+    this.setState({ isVisible: true }, () => {
+      this.props.onEnter && this.props.onEnter();
+    });
+  }
+  onLeave() {
+    this.setState({ isVisible: false }, () => {
+      this.props.onLeave && this.props.onLeave();
+    });
+  }
   componentDidMount() {
     if (!this.context.subscribe) {
-      throw new TypeError('Expected Observable to be mounted within IntersectionObserver');
+      throw new TypeError(
+        "Expected Observable to be mounted within IntersectionObserver"
+      );
     }
-    const { onLeave, onEnter } = this.props;
-    this.context.subscribe(this.ref, onLeave, onEnter);
+    this.context.subscribe(this.ref, this.onLeave, this.onEnter);
   }
   render() {
-    const { onLeave, onEnter, ...rest } = this.props;
-    return (<div ref={this.onRef} {...rest} />);
+    const { isVisible } = this.state;
+    const { onLeave, onEnter, children, ...rest } = this.props;
+    return (
+      <div ref={this.onRef} {...rest}>
+        {typeof children === "function" ? children(isVisible) : children}
+      </div>
+    );
   }
 }
 

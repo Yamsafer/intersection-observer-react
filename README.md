@@ -1,13 +1,14 @@
-[![build status](https://secure.travis-ci.org/survivejs/react-component-boilerplate.svg)](http://travis-ci.org/survivejs/react-component-boilerplate) [![bitHound Score](https://www.bithound.io/github/survivejs/react-component-boilerplate/badges/score.svg)](https://www.bithound.io/github/survivejs/react-component-boilerplate) [![Dependency Status](https://david-dm.org/survivejs/react-component-boilerplate.svg)](https://david-dm.org/survivejs/react-component-boilerplate)
-
 # React IntersectionObserver
 
 A simple wrapper around IntersectionObserver API to use it within react apps.
 
 
-## Basic Usage
-
+## Installation
+### yarn
+`yarn add react-intersection-observer`
+### npm
 `npm install react-intersection-observer`
+## Basic Usage
 
 ```js
   import { IntersectionObserver, Observable} from 'react-intersection-observer'
@@ -22,12 +23,7 @@ A simple wrapper around IntersectionObserver API to use it within react apps.
           
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
       </Observable>
     </IntersectionObserver>)
   }
