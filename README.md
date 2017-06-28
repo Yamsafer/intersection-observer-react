@@ -5,18 +5,18 @@ A simple wrapper around [IntersectionObserver](https://developer.mozilla.org/en-
 
 ## Installation
 ### yarn
-`yarn add react-intersection-observer`
+`yarn add intersection-observer-react`
 ### npm
-`npm install react-intersection-observer`
+`npm install intersection-observer-react`
 ## Basic Usage
 
 See examples 
-* [Scroll Spy](https://yamsafer.github.io/react-intersection-observer/#/ScrollSpy)
-* [Infinite Scroll](https://yamsafer.github.io/react-intersection-observer/#/InfiniteScroll)
+* [Scroll Spy](https://yamsafer.github.io/intersection-observer-react/#/ScrollSpy)
+* [Infinite Scroll](https://yamsafer.github.io/intersection-observer-react/#/InfiniteScroll)
 
 ### Children as function
 ```js
-  import { IntersectionObserver, Observable} from 'react-intersection-observer'
+  import { IntersectionObserver, Observable} from 'intersection-observer-react'
   
   render() {
     return (<IntersectionObserver>
@@ -30,7 +30,7 @@ See examples
 ### `OnEnter`, `OnLeave`
 ```js
   import React, { Component } from 'react';
-  import { IntersectionObserver, Observable } from "react-intersection-observer";
+  import { IntersectionObserver, Observable } from "intersection-observer-react";
 
   class YourComponent extends Component {
     constructor(props) {

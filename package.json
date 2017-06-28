@@ -1,6 +1,6 @@
 {
-  "name": "react-intersection-observer",
-  "description": "Boilerplate for React.js components",
+  "name": "intersection-observer-react",
+  "description": "A simple wrapper around IntersectionObserver API to use it within react apps.",
   "author": "Faris Abusada",
   "user": "Yamsafer",
   "version": "1.0.1",
@@ -74,11 +74,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yamsafer/react-intersection-observer.git"
+    "url": "https://github.com/Yamsafer/intersection-observer-react.git"
   },
-  "homepage": "https://Yamsafer.github.io/react-intersection-observer/",
+  "homepage": "https://Yamsafer.github.io/intersection-observer-react/",
   "bugs": {
-    "url": "https://github.com/Yamsafer/react-intersection-observer/issues"
+    "url": "https://github.com/Yamsafer/intersection-observer-react/issues"
   },
   "jest": {
     "collectCoverage": true,
