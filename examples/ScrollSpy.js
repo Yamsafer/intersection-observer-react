@@ -18,15 +18,15 @@ class ScrollSpy extends Component {
       list: genCharArray('a', 'z')
     };
   }
-  onEnter = (char, entry) => {
-    // console.log(char, this.state.activeChar)
-    this.setState({
-        activeChar: char,
-      })
+  onEnter = (char) => {
+    console.log('onEnter called')
+    char !== this.state.activeChar && this.setState({
+      activeChar: char,
+    })
   }
   render() {
     const { list, activeChar } = this.state;
-    console.log('activeChar', activeChar);
+    console.log('render called');
     return (
       <StickyContainer>
         <Sticky>
@@ -41,7 +41,7 @@ class ScrollSpy extends Component {
         <IntersectionObserver threshold={[1]}>
           <div className="wrapper-1">
             {list.map((val, index) =>
-             <Observable key={index} onEnter={ entry => this.onEnter(val, entry)}>
+             <Observable key={index} onEnter={ entry => this.onEnter(val)}>
                 <div className="card">
                   { val }
                 </div>

@@ -41,6 +41,7 @@ class Observer extends Component {
     this.subscribers.forEach(({ target }) => this.io.observe(target));
   }
   subscribe(target, onEnter, onLeave) {
+    if(!this.io) this.init();
     this.subscribers = this.subscribers.concat({
       target, onEnter, onLeave
     });
@@ -70,9 +71,6 @@ class Observer extends Component {
         instance.onLeave &&
         instance.onLeave(entry);
     });
-  }
-  componentWillMount() {
-    this.init();
   }
   componentDidUpdate(prevProps) {
     (prevProps.root !== this.props.root ||
