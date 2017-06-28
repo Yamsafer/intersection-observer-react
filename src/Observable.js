@@ -20,6 +20,7 @@ class Observable extends Component {
   onEnter() {
     this.setState({ isVisible: true }, () => {
       this.props.onEnter && this.props.onEnter();
+      this.props.onceOnly && this.unsubscribe(this.ref);
     });
   }
   onLeave() {
@@ -37,7 +38,7 @@ class Observable extends Component {
   }
   render() {
     const { isVisible } = this.state;
-    const { onLeave, onEnter, children, ...rest } = this.props;
+    const { onLeave, onEnter, children, onceOnly, ...rest } = this.props;
     return (
       <div ref={this.onRef} {...rest}>
         {typeof children === "function" ? children(isVisible) : children}
