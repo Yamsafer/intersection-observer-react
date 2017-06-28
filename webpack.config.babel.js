@@ -14,6 +14,7 @@ const config = {
   paths: {
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
+    examples: path.join(ROOT_PATH, 'examples'),
     docs: path.join(ROOT_PATH, 'docs'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
@@ -100,7 +101,9 @@ const dev = merge(common, siteCommon, {
         },
         include: [
           config.paths.docs,
-          config.paths.src
+          config.paths.src,
+          config.paths.examples,
+
         ]
       }
     ]
@@ -161,7 +164,8 @@ const ghPages = merge(common, siteCommon, {
         use: 'babel-loader',
         include: [
           config.paths.docs,
-          config.paths.src
+          config.paths.src,
+          config.paths.examples,
         ]
       }
     ]

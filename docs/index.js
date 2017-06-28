@@ -21,7 +21,7 @@ const pages = [
   }, {
     path: '/Example',
     title: 'Infinite Scroll Example',
-    component: require('../src/demo')
+    component: require('../examples/InfiniteScroll')
   }
 ];
 

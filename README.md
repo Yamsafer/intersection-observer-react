@@ -10,31 +10,60 @@ A simple wrapper around [IntersectionObserver](https://developer.mozilla.org/en-
 `npm install react-intersection-observer`
 ## Basic Usage
 
+### Children as function
 ```js
   import { IntersectionObserver, Observable} from 'react-intersection-observer'
   
   render() {
     return (<IntersectionObserver>
-      <Observable
-        onEnter={ () => {
-
-        }}
-        onLeave={ () => {
-          
-        }}
-      >
-        
+      <Observable>
+        { isVisible =>  isVisible && "I Am Visible"  } 
       </Observable>
     </IntersectionObserver>)
   }
-  
 ```
 
+### `OnEnter`, `OnLeave`
+```js
+  import React, { Component } from 'react';
+  import { IntersectionObserver, Observable } from "react-intersection-observer";
 
+  class YourComponent extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        isVisible: false
+      }
+    }
+    onEnter = () => {
+      this.setState({
+        isVisible: true
+      })
+    }
+    onLeave = () => {
+      this.setState({
+        isVisible: false
+      })
+    }
+    render() {
+      const { isVisible } = this.state;
+      return (
+        <IntersectionObserver>
+          <Observable
+           onEnter={this.onEnter}
+           onLeave={this.onLeave}
+          >
+            { isVisible && "I am Visible" }
+          </Observable>
+        </IntersectionObserver>
+      );
+    }
+  }
+```
 ## IntersectionObserver
 
 ### Options
-Same options as [Intersection_Observer_API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Same options as [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 ```
 var options = {
@@ -52,23 +81,3 @@ var options = {
 
 #### threshold
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
-
-
-## Observable
-
-
-```
- <Observable
-    onEnter={ () => {
-      // send GA impression
-    }}
-    onLeave={ () => {
-      // Do nothing :D 
-    }}
->
-```
-
-
->  it is both possible and advised to observe multiple elements using the same IntersectionObserver instance by calling observe() multiple times.
-
-Thus  we provided the `<IntersectionObserver>` element, however if an `Observable` is not present within an `IntersectionObserver` context, it will still operate as expected.

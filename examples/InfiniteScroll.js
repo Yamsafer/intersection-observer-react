@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import IntersectionObserver from "../IntersectionObserver";
-import Placeholder from "./Placeholder";
-import Observable from "../Observable";
+import { IntersectionObserver, Observable } from "../src";
+
 class InfiniteScroll extends Component {
   constructor(props) {
     super(props);
@@ -17,9 +16,16 @@ class InfiniteScroll extends Component {
   render() {
     const { list } = this.state;
     return (
-      <IntersectionObserver threshold={[0.4]}>
+      <IntersectionObserver threshold={[0.1]}>
         <div className="wrapper">
-          {list.map((val, index) => <Placeholder key={index} />)}
+          {list.map((val, index) =>
+            <Observable key={index}>
+              {isVisible =>
+                <div className={`card ${isVisible && "visible"}`}>
+                  { isVisible && "visible" }
+                </div>}
+            </Observable>
+          )}
         </div>
         <Observable onEnter={this.onTimeToGetMore} />
       </IntersectionObserver>
