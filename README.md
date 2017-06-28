@@ -11,8 +11,8 @@ A simple wrapper around [IntersectionObserver](https://developer.mozilla.org/en-
 ## Basic Usage
 
 See examples 
-* [Scroll Spy](http://localhost:8080/#/ScrollSpy)
-* [Infinite Scroll](http://localhost:8080/#/InfiniteScroll)
+* [Scroll Spy](https://yamsafer.github.io/react-intersection-observer/#/ScrollSpy)
+* [Infinite Scroll](https://yamsafer.github.io/react-intersection-observer/#/InfiniteScroll)
 
 ### Children as function
 ```js
