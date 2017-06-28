@@ -17,7 +17,7 @@ class InfiniteScroll extends Component {
     const { list } = this.state;
     return (
       <IntersectionObserver threshold={[0.1]}>
-        <div className="wrapper">
+        <div className="wrapper-responsive">
           {list.map((val, index) =>
             <Observable key={index}>
               {isVisible =>

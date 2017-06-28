@@ -4549,7 +4549,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@~15.5.7:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@~15.5.7:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4644,7 +4644,7 @@ radium@^0.18.0:
     inline-style-prefixer "^2.0.5"
     rimraf "^2.6.1"
 
-raf@^3.1.0:
+raf@^3.1.0, raf@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.3.2.tgz#0c13be0b5b49b46f76d6669248d527cf2b02fe27"
   dependencies:
@@ -4746,6 +4746,13 @@ react-side-effect@^1.0.2:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^0.2.2"
+
+react-sticky@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-sticky/-/react-sticky-6.0.1.tgz#356988bdcc6fc8cd2d89746d2302edce67d86687"
+  dependencies:
+    prop-types "^15.5.8"
+    raf "^3.3.0"
 
 react-transform-catch-errors@^1.0.2:
   version "1.0.2"

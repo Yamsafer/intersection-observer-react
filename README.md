@@ -10,6 +10,10 @@ A simple wrapper around [IntersectionObserver](https://developer.mozilla.org/en-
 `npm install react-intersection-observer`
 ## Basic Usage
 
+See examples 
+* [Scroll Spy](http://localhost:8080/#/ScrollSpy)
+* [Infinite Scroll](http://localhost:8080/#/InfiniteScroll)
+
 ### Children as function
 ```js
   import { IntersectionObserver, Observable} from 'react-intersection-observer'
@@ -81,3 +85,4 @@ var options = {
 
 #### threshold
 > Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
+

@@ -59,6 +59,7 @@
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-github-corner": "^0.3.0",
+    "react-sticky": "^6.0.1",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "sync-exec": "^0.6.2",

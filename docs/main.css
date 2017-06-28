@@ -2,12 +2,7 @@
     z-index: 1000;
 }
 
-body {
-  /*background: #e2e1e0;*/
-  /*text-align: center;*/
-}
-
-.wrapper {
+.wrapper-responsive {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(1, 1fr);
@@ -15,16 +10,22 @@ body {
 }
 
 @media only screen and (min-width: 600px) {
-  .wrapper {
+  .wrapper-responsive {
       grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 @media only screen and (min-width: 768px) {
-  .wrapper {
+  .wrapper-responsive {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.wrapper-1 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(100%, auto);
 }
 
 .card {
@@ -32,7 +33,7 @@ body {
   color: rgb(0, 59, 92);
   border-radius: 2px;
   display: inline-block;
-  height: 300px;
+  height: 80vh;
   margin: 1rem;
   position: relative;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -46,4 +47,19 @@ body {
 
 .visible {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.sticky-header {
+  padding: 10px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  z-index: 99;
+  text-align: center;
+  color: rgb(0, 59, 92);
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: monospace;
 }
