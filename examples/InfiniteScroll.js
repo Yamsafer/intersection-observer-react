@@ -1,3 +1,4 @@
+import "intersection-observer";
 import React, { Component } from "react";
 import { IntersectionObserver, Observable } from "../src";
 

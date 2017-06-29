@@ -1,3 +1,4 @@
+import "intersection-observer";
 import React, { Component } from "react";
 import { StickyContainer, Sticky } from 'react-sticky';
 import { IntersectionObserver, Observable } from "../src";
