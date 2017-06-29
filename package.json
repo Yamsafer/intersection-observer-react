@@ -3,7 +3,7 @@
   "description": "A simple wrapper around IntersectionObserver API to use it within react apps.",
   "author": "Faris Abusada",
   "user": "Yamsafer",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -51,6 +51,7 @@
     "git-prepush-hook": "^1.0.2",
     "html-webpack-plugin": "^2.28.0",
     "html-webpack-template": "^6.0.1",
+    "intersection-observer": "^0.3.2",
     "jest": "^20.0.0",
     "json-loader": "^0.5.4",
     "purecss": "^0.6.2",
@@ -102,7 +103,6 @@
   ],
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
-    "intersection-observer": "^0.3.2",
     "prop-types": "^15.5.10"
   }
 }

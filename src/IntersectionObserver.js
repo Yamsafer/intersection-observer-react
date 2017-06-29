@@ -1,4 +1,3 @@
-import "intersection-observer";
 import React, { Component } from "react";
 import { array, func } from "prop-types";
 
@@ -32,18 +31,22 @@ class Observer extends Component {
   init() {
     const { root, rootMargin, threshold } = this.props;
     this.io = new IntersectionObserver(this.notifySubscribers, {
-      root, rootMargin, threshold
+      root,
+      rootMargin,
+      threshold
     });
   }
   reset() {
-    this.io.disconnect()
+    this.io.disconnect();
     this.init();
     this.subscribers.forEach(({ target }) => this.io.observe(target));
   }
   subscribe(target, onEnter, onLeave) {
-    if(!this.io) this.init();
+    if (!this.io) this.init();
     this.subscribers = this.subscribers.concat({
-      target, onEnter, onLeave
+      target,
+      onEnter,
+      onLeave
     });
     this.io.observe(target);
   }
@@ -73,6 +76,7 @@ class Observer extends Component {
     });
   }
   componentDidUpdate(prevProps) {
+    if (typeof window === "undefined") return;
     (prevProps.root !== this.props.root ||
       prevProps.threshold !== this.props.threshold ||
       prevProps.rootMargin !== this.props.rootMargin) &&
