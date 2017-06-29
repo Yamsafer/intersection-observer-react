@@ -1,6 +1,11 @@
-demo/
 dist/
 tests/
+examples/
+docs/
+gh-pages/
+__tests__/
 src/
 .*
+stats.json
+webpack.config.babel.js
 
