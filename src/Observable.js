@@ -30,7 +30,7 @@ class Observable extends Component {
   }
   componentDidMount() {
     if (!this.context.subscribe) {
-      throw new TypeError(
+      throw new Error(
         "Expected Observable to be mounted within IntersectionObserver"
       );
     }
