@@ -19,13 +19,15 @@ class Observable extends Component {
   }
   onEnter() {
     this.setState({ isVisible: true }, () => {
-      this.props.onEnter && this.props.onEnter();
+      const { onLeave, onEnter, children, onceOnly, ...props } = this.props;
+      this.props.onEnter && this.props.onEnter(props);
       this.props.onceOnly && this.unsubscribe(this.ref);
     });
   }
   onLeave() {
+    const { onLeave, onEnter, children, onceOnly, ...rest } = this.props;
     this.setState({ isVisible: false }, () => {
-      this.props.onLeave && this.props.onLeave();
+      this.props.onLeave && this.props.onLeave(rest);
     });
   }
   componentDidMount() {
