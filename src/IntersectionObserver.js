@@ -41,12 +41,13 @@ class Observer extends Component {
     this.init();
     this.subscribers.forEach(({ target }) => this.io.observe(target));
   }
-  subscribe(target, onEnter, onLeave) {
+  subscribe(target, onEnter, onLeave, onEveryThreshold) {
     if (!this.io) this.init();
     this.subscribers = this.subscribers.concat({
       target,
       onEnter,
-      onLeave
+      onLeave,
+      onEveryThreshold,
     });
     this.io.observe(target);
   }
@@ -67,7 +68,8 @@ class Observer extends Component {
       const instance = this.subscribers.find(
         ({ target }) => target === entry.target
       );
-      this.isComing(entry, observer) &&
+      instance.onEveryThreshold && instance.onEveryThreshold(entry.intersectionRatio);
+      this.isComing(entry, observer, instance) &&
         instance.onEnter &&
         instance.onEnter(entry);
       this.isLeaving(entry, observer) &&
