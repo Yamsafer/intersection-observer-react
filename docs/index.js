@@ -34,7 +34,7 @@ ReactDOM.render(
     <GithubCorner
       href={`https://github.com/${project}`}
       bannerColor="#fff"
-      octoColor="#000"
+      octoColor="#003b5c"
       width={80}
       height={80}
       direction="right"
