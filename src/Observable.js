@@ -7,24 +7,18 @@ const contextTypes = {
 };
 
 class Observable extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isVisible: false };
-    this.onRef = this.onRef.bind(this);
-    this.onEnter = this.onEnter.bind(this);
-    this.onLeave = this.onLeave.bind(this);
-  }
-  onRef(ref) {
+  state = { isVisible: false }
+  onRef = (ref) => {
     this.ref = ref;
   }
-  onEnter() {
+  onEnter = () => {
     this.setState({ isVisible: true }, () => {
       const { onLeave, onEnter, children, onceOnly, ...props } = this.props;
       this.props.onEnter && this.props.onEnter(props);
       this.props.onceOnly && this.unsubscribe(this.ref);
     });
   }
-  onLeave() {
+  onLeave = () => {
     const { onLeave, onEnter, children, onceOnly, ...rest } = this.props;
     this.setState({ isVisible: false }, () => {
       this.props.onLeave && this.props.onLeave(rest);

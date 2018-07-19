@@ -15,13 +15,7 @@ const defaultProps = {
 };
 
 class Observer extends Component {
-  constructor(props) {
-    super(props);
-    this.subscribers = [];
-    this.subscribe = this.subscribe.bind(this);
-    this.unsubscribe = this.unsubscribe.bind(this);
-    this.notifySubscribers = this.notifySubscribers.bind(this);
-  }
+  subscribers = [];
   getChildContext() {
     return {
       subscribe: this.subscribe,
@@ -41,7 +35,7 @@ class Observer extends Component {
     this.init();
     this.subscribers.forEach(({ target }) => this.io.observe(target));
   }
-  subscribe(target, onEnter, onLeave) {
+  subscribe = (target, onEnter, onLeave) => {
     if (!this.io) this.init();
     this.subscribers = this.subscribers.concat({
       target,
@@ -50,7 +44,7 @@ class Observer extends Component {
     });
     this.io.observe(target);
   }
-  unsubscribe(target) {
+  unsubscribe = target => {
     this.io.unobserve(target);
   }
   isLeaving(entry, observer) {
@@ -62,7 +56,7 @@ class Observer extends Component {
   isComing(entry, observer) {
     return entry.intersectionRatio < observer.thresholds[0];
   }
-  notifySubscribers(entries, observer) {
+  notifySubscribers = (entries, observer) => {
     entries.forEach(entry => {
       const instance = this.subscribers.find(
         ({ target }) => target === entry.target
